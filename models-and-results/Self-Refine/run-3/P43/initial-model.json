@@ -1,0 +1,77 @@
+{
+  "initial": {
+    "a": 2,
+    "b": 2,
+    "c": 1,
+    "d": 0,
+    "k": 0,
+    "l": 0,
+    "r": 0,
+    "enabled": 1,
+    "bad": 0
+  },
+  "foreground": [
+    [
+      {
+        "var": "k",
+        "expr": "enabled"
+      },
+      {
+        "var": "enabled",
+        "expr": "0"
+      }
+    ],
+    [
+      {
+        "var": "l",
+        "expr": "c if a == 1 else b if a == 2 else 0"
+      },
+      {
+        "var": "r",
+        "expr": "l if a != 0 else 0"
+      },
+      {
+        "var": "a",
+        "expr": "0 if a != 0 and a == l else a"
+      },
+      {
+        "var": "b",
+        "expr": "(c if l == 1 else b) if a == 1 and a != l else b"
+      },
+      {
+        "var": "c",
+        "expr": "(c if l == 1 else b) if a == 2 and a != l else c"
+      },
+      {
+        "var": "d",
+        "expr": "r"
+      }
+    ],
+    [
+      {
+        "var": "enabled",
+        "expr": "k"
+      }
+    ],
+    [
+      {
+        "var": "b",
+        "expr": "0 if r == 1 else b"
+      },
+      {
+        "var": "c",
+        "expr": "0 if r == 2 else c"
+      }
+    ]
+  ],
+  "isr": [
+    {
+      "var": "bad",
+      "expr": "1 if event1.list_node.next && !reachable(&queue,&event1) else bad"
+    },
+    {
+      "var": "enabled",
+      "expr": "0"
+    }
+  ]
+}

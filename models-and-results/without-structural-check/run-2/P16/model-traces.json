@@ -1,0 +1,200 @@
+{
+  "initial": {
+    "traces": {},
+    "execution_errors": {
+      "-1": "unsupported expression: Call(func=Name(id='count', ctx=Load()))",
+      "0": "unsupported expression: Call(func=Name(id='count', ctx=Load()))",
+      "1": "unsupported expression: Call(func=Name(id='count', ctx=Load()))",
+      "2": "unsupported expression: Call(func=Name(id='count', ctx=Load()))"
+    }
+  },
+  "final": {
+    "traces": {
+      "-1": [
+        {
+          "a": 1,
+          "b": 0,
+          "c": 0,
+          "d": 0,
+          "k": 0,
+          "l": 0,
+          "r": 0,
+          "enabled": 1,
+          "bad": 0
+        },
+        {
+          "a": 1,
+          "b": 0,
+          "c": 1,
+          "d": 0,
+          "k": 0,
+          "l": 0,
+          "r": 0,
+          "enabled": 1,
+          "bad": 0
+        },
+        {
+          "a": 1,
+          "b": 0,
+          "c": 1,
+          "d": 1,
+          "k": 0,
+          "l": 0,
+          "r": 12,
+          "enabled": 1,
+          "bad": 0
+        },
+        {
+          "a": 1,
+          "b": 0,
+          "c": 1,
+          "d": 1,
+          "k": 0,
+          "l": 0,
+          "r": 12,
+          "enabled": 1,
+          "bad": 0
+        }
+      ],
+      "0": [
+        {
+          "a": 1,
+          "b": 0,
+          "c": 0,
+          "d": 0,
+          "k": 0,
+          "l": 0,
+          "r": 0,
+          "enabled": 1,
+          "bad": 0
+        },
+        {
+          "a": 1,
+          "b": 1,
+          "c": 0,
+          "d": 0,
+          "k": 0,
+          "l": 0,
+          "r": 0,
+          "enabled": 1,
+          "bad": 0
+        },
+        {
+          "a": 1,
+          "b": 1,
+          "c": 0,
+          "d": 0,
+          "k": 0,
+          "l": 0,
+          "r": 0,
+          "enabled": 1,
+          "bad": 1
+        },
+        {
+          "a": 1,
+          "b": 1,
+          "c": 0,
+          "d": 0,
+          "k": 0,
+          "l": 0,
+          "r": 0,
+          "enabled": 1,
+          "bad": 1
+        }
+      ],
+      "1": [
+        {
+          "a": 1,
+          "b": 0,
+          "c": 0,
+          "d": 0,
+          "k": 0,
+          "l": 0,
+          "r": 0,
+          "enabled": 1,
+          "bad": 0
+        },
+        {
+          "a": 1,
+          "b": 0,
+          "c": 1,
+          "d": 0,
+          "k": 0,
+          "l": 0,
+          "r": 0,
+          "enabled": 1,
+          "bad": 0
+        },
+        {
+          "a": 1,
+          "b": 1,
+          "c": 1,
+          "d": 0,
+          "k": 0,
+          "l": 0,
+          "r": 0,
+          "enabled": 1,
+          "bad": 1
+        },
+        {
+          "a": 1,
+          "b": 1,
+          "c": 1,
+          "d": 0,
+          "k": 0,
+          "l": 0,
+          "r": 0,
+          "enabled": 1,
+          "bad": 1
+        }
+      ],
+      "2": [
+        {
+          "a": 1,
+          "b": 0,
+          "c": 0,
+          "d": 0,
+          "k": 0,
+          "l": 0,
+          "r": 0,
+          "enabled": 1,
+          "bad": 0
+        },
+        {
+          "a": 1,
+          "b": 0,
+          "c": 1,
+          "d": 0,
+          "k": 0,
+          "l": 0,
+          "r": 0,
+          "enabled": 1,
+          "bad": 0
+        },
+        {
+          "a": 1,
+          "b": 0,
+          "c": 1,
+          "d": 1,
+          "k": 0,
+          "l": 0,
+          "r": 12,
+          "enabled": 1,
+          "bad": 0
+        },
+        {
+          "a": 1,
+          "b": 1,
+          "c": 1,
+          "d": 1,
+          "k": 0,
+          "l": 0,
+          "r": 12,
+          "enabled": 1,
+          "bad": 0
+        }
+      ]
+    },
+    "execution_errors": {}
+  }
+}

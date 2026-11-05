@@ -1,0 +1,17 @@
+{
+  "nsteps": 7,
+  "variables": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "k",
+    "l",
+    "r",
+    "enabled",
+    "bad"
+  ],
+  "interrupt_bound": 1,
+  "semantics": "Single core; IRQ requested before one chosen STEP or after foreground. If masked it remains pending and is delivered at the next enabled boundary. ISR runs atomically to completion. STEP bodies are indivisible semantic operations. No IRQ self-reentry. Initial values come from initialize().",
+  "property": "bad must remain zero. bad instruments an invalid observation, lost update, division-by-zero or invalid index; faulting host operations are guarded. All integer values fit signed 32 bits; C bitwise operations use the host GCC int semantics."
+}

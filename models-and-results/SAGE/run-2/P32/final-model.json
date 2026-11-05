@@ -1,0 +1,37 @@
+{
+  "initial": {
+    "a": 16,
+    "b": 0,
+    "c": 0,
+    "d": 0,
+    "k": 0,
+    "l": 0,
+    "r": 0,
+    "enabled": 1,
+    "bad": 0
+  },
+  "foreground": [
+    [
+      {
+        "var": "c",
+        "expr": "a"
+      }
+    ],
+    [
+      {
+        "var": "d",
+        "expr": "((a * 8) % 256) if c == 16 else d"
+      },
+      {
+        "var": "bad",
+        "expr": "(d == 0) if c == 16 else bad"
+      }
+    ]
+  ],
+  "isr": [
+    {
+      "var": "a",
+      "expr": "32"
+    }
+  ]
+}

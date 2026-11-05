@@ -1,0 +1,89 @@
+{
+  "initial": {
+    "a": 2,
+    "b": 2,
+    "c": 1,
+    "d": 0,
+    "k": 0,
+    "l": 0,
+    "r": 0,
+    "enabled": 1,
+    "bad": 0
+  },
+  "foreground": [
+    [
+      {
+        "var": "k",
+        "expr": "enabled"
+      },
+      {
+        "var": "enabled",
+        "expr": "0"
+      }
+    ],
+    [
+      {
+        "var": "d",
+        "expr": "(c if a == 2 else b) if a != 0 else 0"
+      },
+      {
+        "var": "a",
+        "expr": "0 if a != 0 and (c if a == 2 else b) == a else a"
+      },
+      {
+        "var": "b",
+        "expr": "(c if a == 2 else b) if a != 0 and (c if a == 2 else b) != a and (c if a == 2 else b) == 1 else b"
+      },
+      {
+        "var": "c",
+        "expr": "(c if a == 2 else b) if a != 0 and (c if a == 2 else b) != a and (c if a == 2 else b) == 2 else c"
+      }
+    ],
+    [
+      {
+        "var": "enabled",
+        "expr": "k"
+      }
+    ],
+    [
+      {
+        "var": "b",
+        "expr": "0 if d == 1 else b"
+      },
+      {
+        "var": "c",
+        "expr": "0 if d == 2 else c"
+      }
+    ]
+  ],
+  "isr": [
+    {
+      "var": "bad",
+      "expr": "1 if b != 0 and not (a == 1 or (a == 2 and c == 1) or (a == 1 and b == 1)) else bad"
+    },
+    {
+      "var": "enabled",
+      "expr": "0"
+    },
+    {
+      "var": "b",
+      "expr": "(c if a == 2 else b) if b == 0 else b"
+    },
+    {
+      "var": "c",
+      "expr": "(c if a == 2 else b) if b == 0 and a == 2 else c"
+    },
+    {
+      "var": "b",
+      "expr": "1 if b == 0 else b"
+    },
+    {
+      "var": "a",
+      "expr": "1 if b == 0 else a"
+    },
+    {
+      "var": "enabled",
+      "expr": "1"
+    }
+  ]
+}

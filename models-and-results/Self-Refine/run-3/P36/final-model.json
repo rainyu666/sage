@@ -1,0 +1,37 @@
+{
+  "initial": {
+    "a": 65535,
+    "b": 0,
+    "c": 0,
+    "d": 0,
+    "k": 0,
+    "l": 0,
+    "r": 0,
+    "enabled": 1,
+    "bad": 0
+  },
+  "foreground": [
+    [
+      {
+        "var": "c",
+        "expr": "a"
+      }
+    ],
+    [
+      {
+        "var": "d",
+        "expr": "c == 65535 and (c & 65535) or d"
+      },
+      {
+        "var": "bad",
+        "expr": "c == 65535 and (d == 0) or bad"
+      }
+    ]
+  ],
+  "isr": [
+    {
+      "var": "a",
+      "expr": "65536"
+    }
+  ]
+}

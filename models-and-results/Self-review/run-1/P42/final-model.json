@@ -1,0 +1,38 @@
+{
+  "initial": {
+    "a": 1,
+    "b": 0,
+    "c": 0,
+    "d": 0,
+    "k": 0,
+    "l": 0,
+    "r": 0,
+    "enabled": 0,
+    "bad": 0
+  },
+  "foreground": [
+    [
+      {
+        "var": "k",
+        "expr": "enabled"
+      },
+      {
+        "var": "enabled",
+        "expr": "0"
+      }
+    ],
+    [],
+    [
+      {
+        "var": "bad",
+        "expr": "(a != 1) or (enabled != 0)"
+      }
+    ]
+  ],
+  "isr": [
+    {
+      "var": "c",
+      "expr": "c + 1"
+    }
+  ]
+}

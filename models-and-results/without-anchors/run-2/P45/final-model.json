@@ -1,0 +1,79 @@
+{
+  "initial": {
+    "a": 0,
+    "b": 0,
+    "c": 0,
+    "d": 0,
+    "k": 0,
+    "l": 0,
+    "r": 0,
+    "enabled": 1,
+    "bad": 0
+  },
+  "foreground": [
+    [
+      {
+        "var": "enabled",
+        "expr": "0"
+      },
+      {
+        "var": "a",
+        "expr": "a + 1"
+      },
+      {
+        "var": "k",
+        "expr": "enabled"
+      }
+    ],
+    [
+      {
+        "var": "enabled",
+        "expr": "0"
+      },
+      {
+        "var": "b",
+        "expr": "1"
+      },
+      {
+        "var": "l",
+        "expr": "enabled"
+      }
+    ],
+    [
+      {
+        "var": "b",
+        "expr": "0"
+      },
+      {
+        "var": "enabled",
+        "expr": "l"
+      }
+    ],
+    [
+      {
+        "var": "a",
+        "expr": "a - 1"
+      },
+      {
+        "var": "enabled",
+        "expr": "k"
+      }
+    ],
+    [
+      {
+        "var": "r",
+        "expr": "-95"
+      },
+      {
+        "var": "bad",
+        "expr": "a != 0 or b != 0 or enabled != 1"
+      }
+    ]
+  ],
+  "isr": [
+    {
+      "var": "c",
+      "expr": "c + 1"
+    }
+  ]
+}

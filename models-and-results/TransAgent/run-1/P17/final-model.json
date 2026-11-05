@@ -1,0 +1,63 @@
+{
+  "initial": {
+    "a": 255,
+    "b": 0,
+    "c": 0,
+    "d": 0,
+    "k": 0,
+    "l": 0,
+    "r": 0,
+    "enabled": 1,
+    "bad": 0
+  },
+  "foreground": [
+    [
+      {
+        "var": "k",
+        "expr": "enabled"
+      },
+      {
+        "var": "enabled",
+        "expr": "0"
+      }
+    ],
+    [
+      {
+        "var": "c",
+        "expr": "a"
+      }
+    ],
+    [
+      {
+        "var": "d",
+        "expr": "b"
+      }
+    ],
+    [
+      {
+        "var": "enabled",
+        "expr": "k"
+      }
+    ],
+    [
+      {
+        "var": "r",
+        "expr": "c + 256 * d"
+      },
+      {
+        "var": "bad",
+        "expr": "(r != 255) and (r != 256)"
+      }
+    ]
+  ],
+  "isr": [
+    {
+      "var": "a",
+      "expr": "0"
+    },
+    {
+      "var": "b",
+      "expr": "1"
+    }
+  ]
+}

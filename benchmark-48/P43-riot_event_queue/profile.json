@@ -1,0 +1,18 @@
+{
+  "nsteps": 4,
+  "variables": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "k",
+    "l",
+    "r",
+    "enabled",
+    "bad"
+  ],
+  "interrupt_bound": 1,
+  "semantics": "Single core, one pending IRQ request before a declared STEP or after the foreground call; delivery at the next enabled STEP boundary. ISR atomic, no reentry. STEP bodies indivisible. Non-STEP private control computation does not introduce extra request sites. Initial state from initialize().",
+  "state_projection": "Two-node circular queue, event1 first and event2 tail. a is queue tail id, b event1.next id, c event2.next id; zero means NULL, 1/2 are node identities. d shadows returned node identity, k private saved IRQ state. Device IRQ calls actual event_post for event1. bad observes dropping a post because a stale non-NULL next flag claims membership while event1 is not reachable in the queue. Waiter NULL, no scheduler/other thread. Helpers are copied from upstream clist, event_post and event_get; shadow writes are observational only.",
+  "property": "bad remains zero. Only aliases a,b,c,d,k,l,r,enabled,bad are observable transition-model state. Other source globals represent object storage, constants or private implementation state; preserve their effects through these aliases. No new IR variables."
+}

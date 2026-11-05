@@ -1,0 +1,65 @@
+{
+  "initial": {
+    "a": 1,
+    "b": 1,
+    "c": 0,
+    "d": 0,
+    "k": 0,
+    "l": 0,
+    "r": 0,
+    "enabled": 1,
+    "bad": 0
+  },
+  "foreground": [
+    [
+      {
+        "var": "enabled",
+        "expr": "0"
+      },
+      {
+        "var": "k",
+        "expr": "1 if enabled == 1 else 0"
+      }
+    ],
+    [
+      {
+        "var": "enabled",
+        "expr": "1"
+      }
+    ],
+    [
+      {
+        "var": "c",
+        "expr": "a"
+      }
+    ],
+    [
+      {
+        "var": "d",
+        "expr": "b"
+      }
+    ],
+    [
+      {
+        "var": "enabled",
+        "expr": "0 if k != 0 else 1"
+      }
+    ],
+    [
+      {
+        "var": "bad",
+        "expr": "c != d"
+      }
+    ]
+  ],
+  "isr": [
+    {
+      "var": "a",
+      "expr": "2"
+    },
+    {
+      "var": "b",
+      "expr": "2"
+    }
+  ]
+}

@@ -1,0 +1,301 @@
+{
+  "format": "clang-source-facts-v1",
+  "facts": [
+    {
+      "id": "F000",
+      "scope": "initial",
+      "write": "bad",
+      "reads": [],
+      "guards": [],
+      "conversions": [],
+      "source": "ad=0;",
+      "line": 36,
+      "via": [
+        "initialize"
+      ]
+    },
+    {
+      "id": "F001",
+      "scope": "initial",
+      "write": "r",
+      "reads": [
+        "bad"
+      ],
+      "guards": [],
+      "conversions": [],
+      "source": "=bad=0;",
+      "line": 36,
+      "via": [
+        "initialize"
+      ]
+    },
+    {
+      "id": "F002",
+      "scope": "initial",
+      "write": "l",
+      "reads": [
+        "bad",
+        "r"
+      ],
+      "guards": [],
+      "conversions": [],
+      "source": "=r=bad=0;",
+      "line": 36,
+      "via": [
+        "initialize"
+      ]
+    },
+    {
+      "id": "F003",
+      "scope": "initial",
+      "write": "k",
+      "reads": [
+        "bad",
+        "l",
+        "r"
+      ],
+      "guards": [],
+      "conversions": [],
+      "source": "=l=r=bad=0;",
+      "line": 36,
+      "via": [
+        "initialize"
+      ]
+    },
+    {
+      "id": "F004",
+      "scope": "initial",
+      "write": "d",
+      "reads": [
+        "bad",
+        "k",
+        "l",
+        "r"
+      ],
+      "guards": [],
+      "conversions": [],
+      "source": "=k=l=r=bad=0;",
+      "line": 36,
+      "via": [
+        "initialize"
+      ]
+    },
+    {
+      "id": "F005",
+      "scope": "initial",
+      "write": "enabled",
+      "reads": [],
+      "guards": [],
+      "conversions": [],
+      "source": "nabled=1;",
+      "line": 36,
+      "via": [
+        "initialize"
+      ]
+    },
+    {
+      "id": "F006",
+      "scope": "isr",
+      "write": "bad",
+      "reads": [],
+      "guards": [
+        {
+          "condition": "vent1.list_node.next && !reachable(&queue,&event1))",
+          "reads": [
+            "event1"
+          ],
+          "branch": true
+        }
+      ],
+      "conversions": [],
+      "source": "ad=1;",
+      "line": 85,
+      "via": [
+        "device_irq"
+      ]
+    },
+    {
+      "id": "F007",
+      "scope": "isr",
+      "write": "enabled",
+      "reads": [
+        "enabled"
+      ],
+      "guards": [],
+      "conversions": [],
+      "source": "nabled=key;",
+      "line": 26,
+      "via": [
+        "device_irq",
+        "event_post",
+        "irq_restore"
+      ]
+    },
+    {
+      "id": "F008",
+      "scope": "foreground:0",
+      "write": "enabled",
+      "reads": [],
+      "guards": [],
+      "conversions": [],
+      "source": "nabled=0;",
+      "line": 25,
+      "via": [
+        "foreground",
+        "event_get",
+        "irq_disable"
+      ]
+    },
+    {
+      "id": "F009",
+      "scope": "foreground:0",
+      "write": "k",
+      "reads": [
+        "enabled"
+      ],
+      "guards": [],
+      "conversions": [],
+      "source": "=(int)state;",
+      "line": 89,
+      "via": [
+        "foreground",
+        "event_get"
+      ]
+    },
+    {
+      "id": "F010",
+      "scope": "foreground:1",
+      "write": "d",
+      "reads": [
+        "event1",
+        "event2",
+        "queue"
+      ],
+      "guards": [],
+      "conversions": [],
+      "source": "=node_id(result ? &result->list_node : NULL);",
+      "line": 90,
+      "via": [
+        "foreground",
+        "event_get"
+      ]
+    },
+    {
+      "id": "F011",
+      "scope": "foreground:2",
+      "write": "enabled",
+      "reads": [
+        "enabled"
+      ],
+      "guards": [],
+      "conversions": [],
+      "source": "nabled=key;",
+      "line": 26,
+      "via": [
+        "foreground",
+        "event_get",
+        "irq_restore"
+      ]
+    }
+  ],
+  "unsupported": [
+    {
+      "scope": "initial",
+      "kind": "non-scalar write",
+      "source": "vent1.list_node.next=&event2.list_node;",
+      "id": "U000"
+    },
+    {
+      "scope": "initial",
+      "kind": "non-scalar write",
+      "source": "vent2.list_node.next=&event1.list_node;",
+      "id": "U001"
+    },
+    {
+      "scope": "initial",
+      "kind": "non-scalar write",
+      "source": "vent1.handler=handler;",
+      "id": "U002"
+    },
+    {
+      "scope": "initial",
+      "kind": "non-scalar write",
+      "source": "vent2.handler=handler;",
+      "id": "U003"
+    },
+    {
+      "scope": "initial",
+      "kind": "non-scalar write",
+      "source": "ueue.event_list.next=&event2.list_node;",
+      "id": "U004"
+    },
+    {
+      "scope": "initial",
+      "kind": "non-scalar write",
+      "source": "BinaryOperator",
+      "id": "U005"
+    },
+    {
+      "scope": "isr",
+      "kind": "unresolved call",
+      "name": "__assert_fail",
+      "id": "U006"
+    },
+    {
+      "scope": "isr",
+      "kind": "unresolved call",
+      "name": "__assert_fail",
+      "id": "U007"
+    },
+    {
+      "scope": "isr",
+      "kind": "non-scalar write",
+      "source": "ew_node->next = list->next->next;",
+      "id": "U008"
+    },
+    {
+      "scope": "isr",
+      "kind": "non-scalar write",
+      "source": "ist->next->next = new_node;",
+      "id": "U009"
+    },
+    {
+      "scope": "isr",
+      "kind": "non-scalar write",
+      "source": "ew_node->next = new_node;",
+      "id": "U010"
+    },
+    {
+      "scope": "isr",
+      "kind": "non-scalar write",
+      "source": "ist->next = new_node;",
+      "id": "U011"
+    },
+    {
+      "scope": "foreground:1",
+      "kind": "non-scalar write",
+      "source": "BinaryOperator",
+      "id": "U012"
+    },
+    {
+      "scope": "foreground:1",
+      "kind": "non-scalar write",
+      "source": "ist->next->next = first->next;",
+      "id": "U013"
+    },
+    {
+      "scope": "foreground:3",
+      "kind": "non-scalar write",
+      "source": "BinaryOperator",
+      "id": "U014"
+    }
+  ],
+  "limitations": [
+    "Structural constraints are not semantic equivalence.",
+    "STEP boundaries and host target are declared inputs.",
+    "Pointer, loop, external call and abstract observation coverage can be partial.",
+    "Read sets are syntactic/interprocedural approximations, not a value proof."
+  ],
+  "source_sha256": "9cb403930f643fab5ce2bc23bf0463d5ff38a4520576a722fcd2aba16994cb98",
+  "clang_version": "Ubuntu clang version 18.1.3 (1ubuntu1)"
+}

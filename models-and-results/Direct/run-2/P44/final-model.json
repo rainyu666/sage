@@ -1,0 +1,81 @@
+{
+  "initial": {
+    "a": 2,
+    "b": 2,
+    "c": 1,
+    "d": 0,
+    "k": 0,
+    "l": 0,
+    "r": 0,
+    "enabled": 1,
+    "bad": 0
+  },
+  "foreground": [
+    [
+      {
+        "var": "k",
+        "expr": "enabled"
+      },
+      {
+        "var": "enabled",
+        "expr": "0"
+      }
+    ],
+    [
+      {
+        "var": "d",
+        "expr": "a"
+      },
+      {
+        "var": "a",
+        "expr": "c"
+      },
+      {
+        "var": "c",
+        "expr": "c"
+      }
+    ],
+    [
+      {
+        "var": "b",
+        "expr": "0"
+      }
+    ],
+    [
+      {
+        "var": "enabled",
+        "expr": "k"
+      }
+    ]
+  ],
+  "isr": [
+    {
+      "var": "bad",
+      "expr": "1 if (b != 0 and a != 1 and a != 2) else bad"
+    },
+    {
+      "var": "l",
+      "expr": "enabled"
+    },
+    {
+      "var": "enabled",
+      "expr": "0"
+    },
+    {
+      "var": "r",
+      "expr": "b"
+    },
+    {
+      "var": "b",
+      "expr": "2 if b == 0 else b"
+    },
+    {
+      "var": "a",
+      "expr": "1 if b == 0 else a"
+    },
+    {
+      "var": "enabled",
+      "expr": "l"
+    }
+  ]
+}

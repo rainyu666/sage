@@ -1,0 +1,13 @@
+{
+  "spin_version": "Spin Version 6.5.1 -- 20 December 2019",
+  "candidates": 1728,
+  "statuses": {
+    "trace_match": 1724,
+    "execution_error": 1,
+    "invalid_ir": 3
+  },
+  "scope": "All archived model.json candidates in RQ1/RQ2 and final.json candidates of both external baselines.",
+  "new_llm_calls": 0,
+  "original_results_modified": false,
+  "check": "SPIN deterministic execution versus Python IR replay over every declared schedule and snapshot; not source equivalence or a general lowering proof."
+}

@@ -1,0 +1,18 @@
+{
+  "nsteps": 4,
+  "variables": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "k",
+    "l",
+    "r",
+    "enabled",
+    "bad"
+  ],
+  "interrupt_bound": 1,
+  "semantics": "Single core, one pending IRQ request before a declared STEP or after the foreground call; delivery at the next enabled STEP boundary. ISR atomic, no reentry. STEP bodies indivisible. Non-STEP private control computation does not introduce extra request sites. Initial state from initialize().",
+  "state_projection": "CONFIG_UART_EXCLUSIVE_API_CALLBACKS undefined; CONFIG_SMP disabled. Callback and payload must agree whenever ISR invokes the callback. a encodes callback identity 1/2, b is payload identity; c counts ISR callback invocations; k shadows the private saved key; other unused scalar shadows remain zero.",
+  "property": "bad remains zero. Only aliases a,b,c,d,k,l,r,enabled,bad are observable transition-model state. Other source globals represent object storage, constants or private implementation state; preserve their effects through these aliases. No new IR variables."
+}

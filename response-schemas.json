@@ -1,0 +1,225 @@
+{
+  "schema-1": {
+    "type": "object",
+    "properties": {
+      "model": {
+        "type": "object",
+        "properties": {
+          "initial": {
+            "type": "object",
+            "properties": {
+              "a": {
+                "type": "integer"
+              },
+              "b": {
+                "type": "integer"
+              },
+              "c": {
+                "type": "integer"
+              },
+              "d": {
+                "type": "integer"
+              },
+              "k": {
+                "type": "integer"
+              },
+              "l": {
+                "type": "integer"
+              },
+              "r": {
+                "type": "integer"
+              },
+              "enabled": {
+                "type": "integer"
+              },
+              "bad": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "a",
+              "b",
+              "c",
+              "d",
+              "k",
+              "l",
+              "r",
+              "enabled",
+              "bad"
+            ],
+            "additionalProperties": false
+          },
+          "foreground": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "var": {
+                    "type": "string",
+                    "enum": [
+                      "a",
+                      "b",
+                      "c",
+                      "d",
+                      "k",
+                      "l",
+                      "r",
+                      "enabled",
+                      "bad"
+                    ]
+                  },
+                  "expr": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "var",
+                  "expr"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "isr": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "var": {
+                  "type": "string",
+                  "enum": [
+                    "a",
+                    "b",
+                    "c",
+                    "d",
+                    "k",
+                    "l",
+                    "r",
+                    "enabled",
+                    "bad"
+                  ]
+                },
+                "expr": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "var",
+                "expr"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "initial",
+          "foreground",
+          "isr"
+        ],
+        "additionalProperties": false
+      },
+      "mapping": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "scope": {
+              "type": "string"
+            },
+            "assignment": {
+              "type": "integer"
+            },
+            "fact_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "scope",
+            "assignment",
+            "fact_id"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": [
+      "model",
+      "mapping"
+    ],
+    "additionalProperties": false
+  },
+  "schema-2": {
+    "type": "object",
+    "properties": {
+      "explanation": {
+        "type": "string"
+      },
+      "issues": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "location": {
+              "type": "string"
+            },
+            "problem": {
+              "type": "string"
+            },
+            "suggested_correction": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "location",
+            "problem",
+            "suggested_correction"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "needs_revision": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "explanation",
+      "issues",
+      "needs_revision"
+    ],
+    "additionalProperties": false
+  },
+  "schema-3": {
+    "type": "object",
+    "properties": {
+      "blocks": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "model_scope": {
+              "type": "string"
+            },
+            "source_excerpt": {
+              "type": "string"
+            },
+            "correspondence": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "model_scope",
+            "source_excerpt",
+            "correspondence"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": [
+      "blocks"
+    ],
+    "additionalProperties": false
+  }
+}

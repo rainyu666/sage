@@ -1,0 +1,18 @@
+{
+  "nsteps": 5,
+  "variables": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "k",
+    "l",
+    "r",
+    "enabled",
+    "bad"
+  ],
+  "interrupt_bound": 1,
+  "semantics": "Single core, one pending IRQ request before a declared STEP or after the foreground call; delivery at the next enabled STEP boundary. ISR atomic, no reentry. STEP bodies indivisible. Non-STEP private control computation does not introduce extra request sites. Initial state from initialize().",
+  "state_projection": "Selected declared config interface_id=5 exercises the unsupported error exit. a is global IRQ-lock nesting, b spinlock-held state, c counts benign IRQ deliveries, k/l shadow private keys, r is returned errno. Entry must restore both lock states and enabled=1. Peripheral MMIO hooks are no-ops; the selected path does not touch MMIO. This is a lock-state restoration property, not a concurrency race claim.",
+  "property": "bad remains zero. Only aliases a,b,c,d,k,l,r,enabled,bad are observable transition-model state. Other source globals represent object storage, constants or private implementation state; preserve their effects through these aliases. No new IR variables."
+}

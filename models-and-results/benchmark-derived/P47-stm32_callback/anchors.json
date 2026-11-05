@@ -1,0 +1,204 @@
+{
+  "format": "clang-source-facts-v1",
+  "facts": [
+    {
+      "id": "F000",
+      "scope": "initial",
+      "write": "bad",
+      "reads": [],
+      "guards": [],
+      "conversions": [],
+      "source": "bad=0",
+      "line": 22,
+      "via": [
+        "initialize"
+      ]
+    },
+    {
+      "id": "F001",
+      "scope": "initial",
+      "write": "r",
+      "reads": [
+        "bad"
+      ],
+      "guards": [],
+      "conversions": [],
+      "source": "r=bad=0",
+      "line": 22,
+      "via": [
+        "initialize"
+      ]
+    },
+    {
+      "id": "F002",
+      "scope": "initial",
+      "write": "l",
+      "reads": [
+        "bad",
+        "r"
+      ],
+      "guards": [],
+      "conversions": [],
+      "source": "l=r=bad=0",
+      "line": 22,
+      "via": [
+        "initialize"
+      ]
+    },
+    {
+      "id": "F003",
+      "scope": "initial",
+      "write": "k",
+      "reads": [
+        "bad",
+        "l",
+        "r"
+      ],
+      "guards": [],
+      "conversions": [],
+      "source": "k=l=r=bad=0",
+      "line": 22,
+      "via": [
+        "initialize"
+      ]
+    },
+    {
+      "id": "F004",
+      "scope": "initial",
+      "write": "d",
+      "reads": [
+        "bad",
+        "k",
+        "l",
+        "r"
+      ],
+      "guards": [],
+      "conversions": [],
+      "source": "d=k=l=r=bad=0",
+      "line": 22,
+      "via": [
+        "initialize"
+      ]
+    },
+    {
+      "id": "F005",
+      "scope": "initial",
+      "write": "c",
+      "reads": [
+        "bad",
+        "d",
+        "k",
+        "l",
+        "r"
+      ],
+      "guards": [],
+      "conversions": [],
+      "source": "c=d=k=l=r=bad=0",
+      "line": 22,
+      "via": [
+        "initialize"
+      ]
+    },
+    {
+      "id": "F006",
+      "scope": "initial",
+      "write": "enabled",
+      "reads": [],
+      "guards": [],
+      "conversions": [],
+      "source": "enabled=1",
+      "line": 22,
+      "via": [
+        "initialize"
+      ]
+    },
+    {
+      "id": "F007",
+      "scope": "foreground:0",
+      "write": "enabled",
+      "reads": [],
+      "guards": [],
+      "conversions": [],
+      "source": "enabled=0",
+      "line": 20,
+      "via": [
+        "foreground",
+        "uart_stm32_irq_callback_set",
+        "irq_lock"
+      ]
+    },
+    {
+      "id": "F008",
+      "scope": "foreground:0",
+      "write": "k",
+      "reads": [
+        "enabled"
+      ],
+      "guards": [],
+      "conversions": [],
+      "source": "k=(int)key",
+      "line": 30,
+      "via": [
+        "foreground",
+        "uart_stm32_irq_callback_set"
+      ]
+    },
+    {
+      "id": "F009",
+      "scope": "foreground:3",
+      "write": "enabled",
+      "reads": [
+        "enabled"
+      ],
+      "guards": [],
+      "conversions": [],
+      "source": "enabled=key",
+      "line": 21,
+      "via": [
+        "foreground",
+        "uart_stm32_irq_callback_set",
+        "irq_unlock"
+      ]
+    }
+  ],
+  "unsupported": [
+    {
+      "scope": "initial",
+      "kind": "non-scalar write",
+      "source": "uart.user_cb=old_callback",
+      "id": "U000"
+    },
+    {
+      "scope": "initial",
+      "kind": "non-scalar write",
+      "source": "uart.user_data=&old_data",
+      "id": "U001"
+    },
+    {
+      "scope": "isr",
+      "kind": "unresolved call",
+      "name": null,
+      "id": "U002"
+    },
+    {
+      "scope": "foreground:1",
+      "kind": "non-scalar write",
+      "source": "data->user_cb=cb",
+      "id": "U003"
+    },
+    {
+      "scope": "foreground:2",
+      "kind": "non-scalar write",
+      "source": "data->user_data=cb_data",
+      "id": "U004"
+    }
+  ],
+  "limitations": [
+    "Structural constraints are not semantic equivalence.",
+    "STEP boundaries and host target are declared inputs.",
+    "Pointer, loop, external call and abstract observation coverage can be partial.",
+    "Read sets are syntactic/interprocedural approximations, not a value proof."
+  ],
+  "source_sha256": "129747b833262ef70c4a06a99340383b5b261e558d7ce1a4e829372bf82df3ed",
+  "clang_version": "Ubuntu clang version 18.1.3 (1ubuntu1)"
+}

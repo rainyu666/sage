@@ -1,0 +1,41 @@
+{
+  "initial": {
+    "a": 1,
+    "b": 0,
+    "c": 0,
+    "d": 0,
+    "k": 0,
+    "l": 0,
+    "r": 0,
+    "enabled": 1,
+    "bad": 0
+  },
+  "foreground": [
+    [
+      {
+        "var": "c",
+        "expr": "(a-b)&7"
+      }
+    ],
+    [
+      {
+        "var": "d",
+        "expr": "c if c>0 else d"
+      },
+      {
+        "var": "bad",
+        "expr": "(d==0) if c>0 else bad"
+      },
+      {
+        "var": "r",
+        "expr": "12//d if c>0 and not bad else r"
+      }
+    ]
+  ],
+  "isr": [
+    {
+      "var": "b",
+      "expr": "a"
+    }
+  ]
+}

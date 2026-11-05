@@ -1,0 +1,81 @@
+{
+  "initial": {
+    "a": 2,
+    "b": 2,
+    "c": 1,
+    "d": 0,
+    "k": 0,
+    "l": 0,
+    "r": 0,
+    "enabled": 1,
+    "bad": 0
+  },
+  "foreground": [
+    [
+      {
+        "var": "k",
+        "expr": "enabled"
+      },
+      {
+        "var": "enabled",
+        "expr": "0"
+      }
+    ],
+    [
+      {
+        "var": "a",
+        "expr": "0 if a == 0 and a == 0 else a"
+      },
+      {
+        "var": "d",
+        "expr": "2 if a == 2 else 1 if a == 1 else 0"
+      },
+      {
+        "var": "a",
+        "expr": "0 if a == 0 else 0 if a == 2 and c == 0 else a"
+      },
+      {
+        "var": "c",
+        "expr": "d if a == 2 and c != 0 else c"
+      },
+      {
+        "var": "a",
+        "expr": "0 if a == 2 and c == 0 else a"
+      },
+      {
+        "var": "b",
+        "expr": "d if a == 1 and b != 0 else b"
+      }
+    ],
+    [
+      {
+        "var": "b",
+        "expr": "0 if d == 1 else b"
+      },
+      {
+        "var": "c",
+        "expr": "0 if d == 2 else c"
+      }
+    ],
+    [
+      {
+        "var": "enabled",
+        "expr": "k"
+      }
+    ]
+  ],
+  "isr": [
+    {
+      "var": "bad",
+      "expr": "1 if b != 0 and not (a == 1 or a == 2) else bad"
+    },
+    {
+      "var": "a",
+      "expr": "1 if b == 0 else a"
+    },
+    {
+      "var": "b",
+      "expr": "a if b == 0 else b"
+    }
+  ]
+}

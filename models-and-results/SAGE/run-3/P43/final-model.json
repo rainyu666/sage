@@ -1,0 +1,81 @@
+{
+  "initial": {
+    "a": 2,
+    "b": 2,
+    "c": 1,
+    "d": 0,
+    "k": 0,
+    "l": 0,
+    "r": 0,
+    "enabled": 1,
+    "bad": 0
+  },
+  "foreground": [
+    [
+      {
+        "var": "enabled",
+        "expr": "0"
+      },
+      {
+        "var": "k",
+        "expr": "enabled"
+      }
+    ],
+    [
+      {
+        "var": "c",
+        "expr": "c if a != 2 or c == 0 else (1 if c == 1 else (b if c == 2 else 0))"
+      },
+      {
+        "var": "b",
+        "expr": "b if a != 1 or b == 0 else (1 if b == 1 else (c if b == 2 else 0))"
+      },
+      {
+        "var": "a",
+        "expr": "0 if a != 0 and ((a == 1 and b == 1) or (a == 2 and c == 2)) else a"
+      },
+      {
+        "var": "d",
+        "expr": "(b if a == 1 else c) if a != 0 else 0"
+      }
+    ],
+    [
+      {
+        "var": "enabled",
+        "expr": "k"
+      }
+    ],
+    [
+      {
+        "var": "b",
+        "expr": "0 if d == 1 else b"
+      },
+      {
+        "var": "c",
+        "expr": "0 if d == 2 else c"
+      }
+    ]
+  ],
+  "isr": [
+    {
+      "var": "bad",
+      "expr": "1 if b != 0 and not (a != 0 and (a == 1 or (a == 2 and c == 1))) else bad"
+    },
+    {
+      "var": "b",
+      "expr": "(1 if a == 0 else (b if a == 1 else c)) if b == 0 else b"
+    },
+    {
+      "var": "c",
+      "expr": "1 if b == 0 and a == 2 else c"
+    },
+    {
+      "var": "a",
+      "expr": "1 if b == 0 else a"
+    },
+    {
+      "var": "enabled",
+      "expr": "enabled"
+    }
+  ]
+}

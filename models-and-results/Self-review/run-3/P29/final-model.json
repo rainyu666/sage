@@ -1,0 +1,37 @@
+{
+  "initial": {
+    "a": 255,
+    "b": 0,
+    "c": 0,
+    "d": 0,
+    "k": 0,
+    "l": 0,
+    "r": 0,
+    "enabled": 1,
+    "bad": 0
+  },
+  "foreground": [
+    [
+      {
+        "var": "c",
+        "expr": "a & 255"
+      }
+    ],
+    [
+      {
+        "var": "d",
+        "expr": "c if c == 255 else d"
+      },
+      {
+        "var": "bad",
+        "expr": "1 if c == 255 and d == 0 else 0 if c == 255 else bad"
+      }
+    ]
+  ],
+  "isr": [
+    {
+      "var": "a",
+      "expr": "256"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "initial": {
+    "a": 1,
+    "b": 1,
+    "c": 0,
+    "d": 0,
+    "k": 0,
+    "l": 0,
+    "r": 0,
+    "enabled": 1,
+    "bad": 0
+  },
+  "foreground": [
+    [
+      {
+        "var": "enabled",
+        "expr": "0"
+      },
+      {
+        "var": "k",
+        "expr": "1"
+      }
+    ],
+    [
+      {
+        "var": "a",
+        "expr": "2"
+      }
+    ],
+    [
+      {
+        "var": "b",
+        "expr": "2"
+      }
+    ],
+    [
+      {
+        "var": "enabled",
+        "expr": "k"
+      }
+    ]
+  ],
+  "isr": [
+    {
+      "var": "c",
+      "expr": "c + 1"
+    },
+    {
+      "var": "bad",
+      "expr": "1 if ((a == 1 and b != 1) or (a == 2 and b != 2)) else bad"
+    }
+  ]
+}

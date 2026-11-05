@@ -1,0 +1,17 @@
+{
+  "nsteps": 2,
+  "variables": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "k",
+    "l",
+    "r",
+    "enabled",
+    "bad"
+  ],
+  "interrupt_bound": 1,
+  "semantics": "Single core; request before one STEP or after foreground. Masked request remains pending; deliver at next enabled boundary. One atomic ISR. STEP bodies are indivisible. C casts and helper return types have their actual GCC stdint widths; arithmetic and shifts follow this host C implementation. Initial values from initialize().",
+  "property": "bad remains zero. Faulting operations are guarded. Values of all observable state fit signed 32-bit integers, including sign extension and narrowing results."
+}
